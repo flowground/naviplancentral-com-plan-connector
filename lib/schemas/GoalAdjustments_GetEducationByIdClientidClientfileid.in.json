@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "clientId": {
+            "required": false,
+            "type": "string"
+        },
+        "clientFileId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

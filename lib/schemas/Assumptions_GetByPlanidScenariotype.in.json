@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "planId": {
+            "required": false,
+            "type": "string"
+        },
+        "scenarioType": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

@@ -1,0 +1,951 @@
+{
+    "title": "Published Plan Service",
+    "description": "An API for accessing NaviPlan plan data for a client.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/naviplancentral.com/plan/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://demo.uat.naviplancentral.com/plan",
+                    "http://demo.uat.naviplancentral.com/plan",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Advisors_Get": {
+            "main": "./lib/actions/Advisors_Get.js",
+            "title": "Retrieve Advisors",
+            "description": "This operation retrieves a list of all of the Advisors in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Advisors_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Advisors_GetById": {
+            "main": "./lib/actions/Advisors_GetById.js",
+            "title": "Retrieve an Advisor",
+            "description": "This operation retrieves an Advisor from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Advisors_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Assumptions_GetByPlanidScenariotype": {
+            "main": "./lib/actions/Assumptions_GetByPlanidScenariotype.js",
+            "title": "Retrieve plan assumptions",
+            "description": "This operation retrieves an object containing all assumptions for the specified plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Assumptions_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "BusinessEntities_GetByPlanidScenariotype": {
+            "main": "./lib/actions/BusinessEntities_GetByPlanidScenariotype.js",
+            "title": "Retrieve business entities",
+            "description": "This operation retrieves a list of all of the business entities in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/BusinessEntities_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "BusinessEntities_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/BusinessEntities_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve a business entity",
+            "description": "This operation retrieves a business entity from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/BusinessEntities_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Calculations_GetByPlanidScenariotype": {
+            "main": "./lib/actions/Calculations_GetByPlanidScenariotype.js",
+            "title": "Retrieve Monte Carlo results from standalone calc service",
+            "description": "Currently just stubbed out, POC in development",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Calculations_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DefinedBenefitPensions_GetByPlanidScenariotype": {
+            "main": "./lib/actions/DefinedBenefitPensions_GetByPlanidScenariotype.js",
+            "title": "Retrieve defined benefit pensions",
+            "description": "This operation retrieves a list of all of the defined benefit pensions in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DefinedBenefitPensions_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DefinedBenefitPensions_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/DefinedBenefitPensions_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve a definedBenefitPension",
+            "description": "This operation retrieves a defined benefit pension from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DefinedBenefitPensions_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Eula_Accept": {
+            "main": "./lib/actions/Eula_Accept.js",
+            "title": "Accepts the EULA",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Eula_Accept.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Family_GetByPlanidScenariotype": {
+            "main": "./lib/actions/Family_GetByPlanidScenariotype.js",
+            "title": "Retrieve family",
+            "description": "This operation retrieves an object containing all familymembers for the specified plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Family_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GoalAdjustments_GetEducationByIdClientidClientfileid": {
+            "main": "./lib/actions/GoalAdjustments_GetEducationByIdClientidClientfileid.js",
+            "title": "Retrieve the adjustments",
+            "description": "This function retrieves a goal and the adjustments made to it",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GoalAdjustments_GetEducationByIdClientidClientfileid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GoalAdjustments_PostEducationByIdGoaladjustments": {
+            "main": "./lib/actions/GoalAdjustments_PostEducationByIdGoaladjustments.js",
+            "title": "Perform calculations",
+            "description": "This function returns the posted object and the adjusted calculation values",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GoalAdjustments_PostEducationByIdGoaladjustments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GoalAdjustments_GetGoalSuccessRatesByClientidClientfileid": {
+            "main": "./lib/actions/GoalAdjustments_GetGoalSuccessRatesByClientidClientfileid.js",
+            "title": "Returns a list of goals with their relevant success rates.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GoalAdjustments_GetGoalSuccessRatesByClientidClientfileid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GoalAdjustments_GetMajorPurchaseByIdClientidClientfileid": {
+            "main": "./lib/actions/GoalAdjustments_GetMajorPurchaseByIdClientidClientfileid.js",
+            "title": "Retrieve the adjustments",
+            "description": "This function retrieves a goal and the adjustments made to it",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GoalAdjustments_GetMajorPurchaseByIdClientidClientfileid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GoalAdjustments_PostMajorPurchaseByIdGoaladjustments": {
+            "main": "./lib/actions/GoalAdjustments_PostMajorPurchaseByIdGoaladjustments.js",
+            "title": "Perform calculations",
+            "description": "This function returns the posted object and the adjusted calculation values",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GoalAdjustments_PostMajorPurchaseByIdGoaladjustments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GoalAdjustments_GetGoalAdjustmentRestrictionsByClientidClientfileid": {
+            "main": "./lib/actions/GoalAdjustments_GetGoalAdjustmentRestrictionsByClientidClientfileid.js",
+            "title": "Returns a list of goal adjustment restrictions.",
+            "description": "This function returns a list of adjustment restrictions for all goals.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GoalAdjustments_GetGoalAdjustmentRestrictionsByClientidClientfileid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GoalAdjustments_GetRetirementByIdClientidClientfileid": {
+            "main": "./lib/actions/GoalAdjustments_GetRetirementByIdClientidClientfileid.js",
+            "title": "Retrieve the adjustments",
+            "description": "This function retrieves a goal and the adjustments made to it for a particular client",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GoalAdjustments_GetRetirementByIdClientidClientfileid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GoalAdjustments_PostRetirementByIdGoaladjustments": {
+            "main": "./lib/actions/GoalAdjustments_PostRetirementByIdGoaladjustments.js",
+            "title": "Perform calculations",
+            "description": "This function returns the posted object and the adjusted calculation values",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GoalAdjustments_PostRetirementByIdGoaladjustments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Goals_GetByPlanidScenariotype": {
+            "main": "./lib/actions/Goals_GetByPlanidScenariotype.js",
+            "title": "Retrieve goals",
+            "description": "This operation retrieves a list of all of the goals in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Goals_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Goals_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/Goals_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve goals",
+            "description": "This operation retrieves a goal from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Goals_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "HoldingCompanies_GetByPlanidScenariotype": {
+            "main": "./lib/actions/HoldingCompanies_GetByPlanidScenariotype.js",
+            "title": "Retrieve holding companies",
+            "description": "This operation retrieves a list of all of the holding companies in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/HoldingCompanies_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "HoldingCompanies_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/HoldingCompanies_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve a holding company",
+            "description": "This operation retrieves a holding company from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/HoldingCompanies_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Liabilities_GetByPlanidScenariotype": {
+            "main": "./lib/actions/Liabilities_GetByPlanidScenariotype.js",
+            "title": "Retrieve liabilities",
+            "description": "This operation retrieves a list of all of the liabilities in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Liabilities_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Liabilities_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/Liabilities_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve a liability",
+            "description": "This operation retrieves a liability from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Liabilities_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssets_GetByPlanidScenariotype": {
+            "main": "./lib/actions/LifestyleAssets_GetByPlanidScenariotype.js",
+            "title": "Retrieve lifestyle assets",
+            "description": "This operation retrieves a list of all of the lifestyle assets in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssets_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssets_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/LifestyleAssets_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve lifestyle assets",
+            "description": "This operation retrieves a lifestyle asset from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssets_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "NetWorth_GetByPlanidScenariotype": {
+            "main": "./lib/actions/NetWorth_GetByPlanidScenariotype.js",
+            "title": "Retrieve net worth",
+            "description": "This operation retrieves an object containing net worth values for specific dates within the plan:\r\n              * Plan Start Date\r\n              * Retirement Date\r\n              * Plan End Date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/NetWorth_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Password_HasUserSetPassword": {
+            "main": "./lib/actions/Password_HasUserSetPassword.js",
+            "title": "Determines if the currently logged in user has set their own password",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Password_HasUserSetPassword.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Password_PasswordRequirements": {
+            "main": "./lib/actions/Password_PasswordRequirements.js",
+            "title": "Gets the password complexity requirements",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Password_PasswordRequirements.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Password_ResetByModel": {
+            "main": "./lib/actions/Password_ResetByModel.js",
+            "title": "Resets the password for the supplied user name",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Password_ResetByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Password_SetByModel": {
+            "main": "./lib/actions/Password_SetByModel.js",
+            "title": "Sets the password for the currently logged in user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Password_SetByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PlanInformation_GetByPlanidScenariotype": {
+            "main": "./lib/actions/PlanInformation_GetByPlanidScenariotype.js",
+            "title": "Retrieve plan information",
+            "description": "This operation retrieves the high level plan information for a given plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PlanInformation_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PortfolioAccounts_GetByPlanidScenariotype": {
+            "main": "./lib/actions/PortfolioAccounts_GetByPlanidScenariotype.js",
+            "title": "Retrieve portfolio accounts",
+            "description": "This operation retrieves a list of all of the portfolio accounts in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PortfolioAccounts_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PortfolioAccounts_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/PortfolioAccounts_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve a portfolio account",
+            "description": "This operation retrieves a portfolio account from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PortfolioAccounts_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProjectedAnnualSummary_GetByPlanidScenariotype": {
+            "main": "./lib/actions/ProjectedAnnualSummary_GetByPlanidScenariotype.js",
+            "title": "Retrieve projected annual summaries",
+            "description": "This operation retrieves an object containing annual summary information \r\n              for each year of the projected plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProjectedAnnualSummary_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProjectedAnnualSummary_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/ProjectedAnnualSummary_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve projected annual summary by id",
+            "description": "This operation retrieves an object containing annual summary information \r\n              for a single specified year of the projected plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProjectedAnnualSummary_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProjectedCashFlow_GetByPlanidScenariotype": {
+            "main": "./lib/actions/ProjectedCashFlow_GetByPlanidScenariotype.js",
+            "title": "Retrieve projected cash flow",
+            "description": "This operation retrieves an object containing cash flow information \r\n              for each year of the projected plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProjectedCashFlow_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProjectedCashFlow_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/ProjectedCashFlow_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve projected cash flow by id",
+            "description": "This operation retrieves an object containing cash flow information \r\n              for a single specified year of the projected plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProjectedCashFlow_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProjectedGoals_GetAssetsFundingGoalsByPlanidScenariotype": {
+            "main": "./lib/actions/ProjectedGoals_GetAssetsFundingGoalsByPlanidScenariotype.js",
+            "title": "Retrieve assets funding goals over time",
+            "description": "This operation retrieves the assets funding each goal throughout the plan years",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProjectedGoals_GetAssetsFundingGoalsByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProjectedGoals_GetNeedsVsAbilitiesByPlanidScenariotype": {
+            "main": "./lib/actions/ProjectedGoals_GetNeedsVsAbilitiesByPlanidScenariotype.js",
+            "title": "Retrieve needs vs abilities data",
+            "description": "This operation retrieves a needs and abilities data for all goals throughout\r\n              the plan years.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProjectedGoals_GetNeedsVsAbilitiesByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProjectedNetWorth_GetByPlanidScenariotype": {
+            "main": "./lib/actions/ProjectedNetWorth_GetByPlanidScenariotype.js",
+            "title": "Retrieve projected net worth",
+            "description": "This operation retrieves an object containing net worth information \r\n              for each year of the projected plan. These are EOY numbers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProjectedNetWorth_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ProjectedNetWorth_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/ProjectedNetWorth_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve projected net worth by id",
+            "description": "This operation retrieves an object containing net worth information \r\n              for a single specified year of the projected plan. These are EOY numbers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ProjectedNetWorth_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RestrictedStocks_GetByPlanidScenariotype": {
+            "main": "./lib/actions/RestrictedStocks_GetByPlanidScenariotype.js",
+            "title": "Retrieve restricted stocks",
+            "description": "This operation retrieves a list of all of the restricted stocks in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RestrictedStocks_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RestrictedStocks_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/RestrictedStocks_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve a restricted stock",
+            "description": "This operation retrieves a restricted stock from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RestrictedStocks_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ServiceInformation_Statistics": {
+            "main": "./lib/actions/ServiceInformation_Statistics.js",
+            "title": "This resource can be used to check the status of the service.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ServiceInformation_Statistics.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StockOptions_GetByPlanidScenariotype": {
+            "main": "./lib/actions/StockOptions_GetByPlanidScenariotype.js",
+            "title": "Retrieve stock options",
+            "description": "This operation retrieves a list of all of the stock options in the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StockOptions_GetByPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StockOptions_GetByIdPlanidScenariotype": {
+            "main": "./lib/actions/StockOptions_GetByIdPlanidScenariotype.js",
+            "title": "Retrieve a stock option",
+            "description": "This operation retrieves a stock option from the plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StockOptions_GetByIdPlanidScenariotype.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Auth_LoginByModel": {
+            "main": "./lib/actions/Auth_LoginByModel.js",
+            "title": "Start a session with the DomainProviders user store",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Auth_LoginByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Auth_PasswordRequirements": {
+            "main": "./lib/actions/Auth_PasswordRequirements.js",
+            "title": "Gets the login rules",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Auth_PasswordRequirements.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Auth_Logout": {
+            "main": "./lib/actions/Auth_Logout.js",
+            "title": "Auth_Logout",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Auth_Logout.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Auth_ResumeSession": {
+            "main": "./lib/actions/Auth_ResumeSession.js",
+            "title": "Validate a session",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Auth_ResumeSession.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

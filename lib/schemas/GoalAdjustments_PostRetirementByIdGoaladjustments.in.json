@@ -1,0 +1,81 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "adjustedValues": {
+                    "properties": {
+                        "clientRetirementAge": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "coClientRetirementAge": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "discretionaryExpenseCoverage": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "fixedExpenseCoverage": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "lumpSumContribution": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "lumpSumDate": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "monthlySavingsContribution": {
+                            "format": "double",
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "originalValues": {
+                    "properties": {
+                        "clientRetirementAge": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "coClientRetirementAge": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "discretionaryExpenseCoverage": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "fixedExpenseCoverage": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "lumpSumContribution": {
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "lumpSumDate": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "monthlySavingsContribution": {
+                            "format": "double",
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
